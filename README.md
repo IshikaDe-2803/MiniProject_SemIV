@@ -38,7 +38,7 @@ Reference Research Papers:
 2. FACE AND FACIAL FEATURE DETECTION EVALUATION
  Performance Evaluation of Public Domain Haar Detectors for Face and Facial Feature Detection M. Castrill´on-Santana, O. D´eniz-Su´arez, L. Ant´on-Canal´ıs and J. Lorenzo-Navarro Institute of Intelligent Systems and Numerical Applications in Engineering Edificio Central del Parque Tecnol´ogico, Campus de Tafira, University of Las Palmas de Gran Canaria, Spain 
 VISAPP 2008 - International Conference on Computer Vision Theory and Applications 
-3. [Rapid Object Detection using a Boosted Cascade of Simple Features - Viola and Jones] (https://www.cs.cmu.edu/~efros/courses/LBMV07/Papers/viola-cvpr-01.pdf)
+3. <a href = "https://www.cs.cmu.edu/~efros/courses/LBMV07/Papers/viola-cvpr-01.pdf" target="_blank"> Rapid Object Detection using a Boosted Cascade of Simple Features - Viola and Jones </a>
 
 ### Work Distribution (temporary):-
 Ishika: Image processing
