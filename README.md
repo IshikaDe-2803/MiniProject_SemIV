@@ -33,10 +33,9 @@ FrontEnd: Figma, HTML, CSS, Bootstrap
 BackEnd: Flask/Django
 Libraries: OpenCV/Keras
 
-Reference Research Papers:
-1. <a href = "https://ieeexplore.ieee.org/document/9350556" target="_blank"> The Face Mask Detection For Preventing the Spread of COVID-19 </a>
-2. <a href = "https://accedacris.ulpgc.es/bitstream/10553/42867/1/face_facial_feature.pdf" target="_blank"> Face and Facial Feature detection Evaluation </a> 
-3. <a href = "https://www.cs.cmu.edu/~efros/courses/LBMV07/Papers/viola-cvpr-01.pdf" target="_blank"> Rapid Object Detection using a Boosted Cascade of Simple Features - Viola and Jones </a>
+References:
+1. <a href = "https://www.cs.cmu.edu/~efros/courses/LBMV07/Papers/viola-cvpr-01.pdf" target="_blank"> Rapid Object Detection using a Boosted Cascade of Simple Features - Viola and Jones </a>
+2. https://docs.opencv.org/3.4/db/d28/tutorial_cascade_classifier.html
 
 ### Work Distribution (temporary):-
 Ishika: Image processing
