@@ -34,10 +34,8 @@ BackEnd: Flask/Django
 Libraries: OpenCV/Keras
 
 Reference Research Papers:
-1. S. Susanto, F. A. Putra, R. Analia and I. K. L. N. Suciningtyas, "The Face Mask Detection For Preventing the Spread of COVID-19 at Politeknik Negeri Batam," 2020 3rd International Conference on Applied Engineering (ICAE), 2020, pp. 1-5, doi: 10.1109/ICAE50557.2020.9350556.
-2. FACE AND FACIAL FEATURE DETECTION EVALUATION
- Performance Evaluation of Public Domain Haar Detectors for Face and Facial Feature Detection M. Castrill´on-Santana, O. D´eniz-Su´arez, L. Ant´on-Canal´ıs and J. Lorenzo-Navarro Institute of Intelligent Systems and Numerical Applications in Engineering Edificio Central del Parque Tecnol´ogico, Campus de Tafira, University of Las Palmas de Gran Canaria, Spain 
-VISAPP 2008 - International Conference on Computer Vision Theory and Applications 
+1. <a href = "https://ieeexplore.ieee.org/document/9350556" target="_blank"> The Face Mask Detection For Preventing the Spread of COVID-19 </a>
+2. <a href = "https://accedacris.ulpgc.es/bitstream/10553/42867/1/face_facial_feature.pdf" target="_blank"> Face and Facial Feature detection Evaluation </a> 
 3. <a href = "https://www.cs.cmu.edu/~efros/courses/LBMV07/Papers/viola-cvpr-01.pdf" target="_blank"> Rapid Object Detection using a Boosted Cascade of Simple Features - Viola and Jones </a>
 
 ### Work Distribution (temporary):-
