@@ -13,25 +13,37 @@ h2{
     font-weight: bold;
     /* margin: auto; */
     margin: 2px;
+    /* opacity: 1; */
 }
 .container{
    
     width: 752px;;
     height: 446px;;
-    border-radius:4px;
+    /* border-radius:4px; */
     /* display:flex;
     flex-direction:column; */
     /* justify-content:center; */
     /* align-items:center; */
     background-color: white;
-    opacity: 0.85;
+    opacity: 0.7;
     position: fixed;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
     margin: auto;
-    border: 3px solid rgb(255, 255, 255,0);
+    /* border: 3px solid rgb(255, 255, 255,0); */
+}
+.border{
+    width: 751px;
+    height: 445px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border: 7px solid white;
 }
 #details{
     display:flex;
@@ -48,12 +60,17 @@ h2{
     color: white;
     border-radius: 4px;
     font-size: 25px;
+    position: relative;
+    left: 139px;
+    right: 0;
+    top: 0;
+    bottom: 0;
 }
 #email{
     border: 5px solid #3D3C38;    
     font-size: 32px;
     width: 439px;
-    margin-top: -50px;
+    /* margin-top: -50px; */
     font-weight: bold;
     font-family: 'Jaldi', sans-serif;
 }
