@@ -1,10 +1,19 @@
 body{
-    background-image: url(https://ysm-res.cloudinary.com/image/upload/c_fill,f_auto,g_faces:auto,h_720,q_auto,w_1280/v1/yale-medicine/live-prod/ym_new/images/3655000d-7adc-4e0f-a0ab-ac5d5ce337fa_tcm990-383423.jpg);
+    /* background-image: url(https://ysm-res.cloudinary.com/image/upload/c_fill,f_auto,g_faces:auto,h_720,q_auto,w_1280/v1/yale-medicine/live-prod/ym_new/images/3655000d-7adc-4e0f-a0ab-ac5d5ce337fa_tcm990-383423.jpg); */
     background-color: white;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
 }
+#bg {
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+  
+    /* Preserve aspet ratio */
+    min-width: 100%;
+    min-height: 100%;
+  }
 h2{
    padding-top: 25px;
    padding-left: 27px ;
@@ -55,7 +64,7 @@ h2{
 #button{
     background-color:#C96F66;
     border: 1px white solid;
-    padding: 8px 46px;
+    padding: 10px 57.5px;
     /* ratio is 4:13 */
     color: white;
     border-radius: 4px;
@@ -70,7 +79,7 @@ h2{
     border: 5px solid #3D3C38;    
     font-size: 32px;
     width: 439px;
-    /* margin-top: -50px; */
+    margin-top: -50px;
     font-weight: bold;
     font-family: 'Jaldi', sans-serif;
 }
@@ -92,23 +101,24 @@ h2{
     text-decoration: none;
     font-weight: bold;
     font-family: 'Jaldi', sans-serif;
-    font-size: 20px;
+    font-size: 30px;
+    padding-bottom: 10px;
 }
 /* #register  */
 a:visited {
-    color: #93C0BD;
+    color: #71a3a0;
     background-color: transparent;
     text-decoration: none;
     font-weight: bold;
     font-family: 'Jaldi', sans-serif;
-    font-size: 20px;
+    font-size: 30px;
   }
 /* #register  */
 a:hover {
-    color: #FCCBAB;
+    color: #fa8130;
     background-color: transparent;
     text-decoration: underline;
     font-weight: bold;
     font-family: 'Jaldi', sans-serif;
-    font-size: 20px;
+    font-size: 30px;
 }
