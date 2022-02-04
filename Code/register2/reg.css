@@ -1,3 +1,7 @@
+.btn btn-lg {
+    
+}
+
 .btn-lg{
     background-color:#C96F66;
     border: 1px white solid;
@@ -12,3 +16,9 @@
     min-width: 100%;
     min-height: 100%;
   }
+#rg-button{
+    background-color: purple;
+}
+.btn {
+    background-color: violet;
+}
