@@ -61,6 +61,11 @@ h2{
     align-items:center;
     padding-top:20px;
 }
+.button-position{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 #button{
     background-color:#C96F66;
     border: 1px white solid;
@@ -82,6 +87,7 @@ h2{
     margin-top: -50px;
     font-weight: bold;
     font-family: 'Jaldi', sans-serif;
+    box-shadow: 0px 0px 5px 0px #3D3C38;
 }
 #password{
     border: 5px solid #3D3C38;
@@ -93,6 +99,7 @@ h2{
     opacity: 1;
     margin-top: 15px;
     margin-bottom: 15px;
+    box-shadow: 0px 0px 5px 0px #3D3C38;
 }
 /* #register */
  a:link{
