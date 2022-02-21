@@ -1,4 +1,4 @@
-body{
+.body{
     /* background-image: url(https://ysm-res.cloudinary.com/image/upload/c_fill,f_auto,g_faces:auto,h_720,q_auto,w_1280/v1/yale-medicine/live-prod/ym_new/images/3655000d-7adc-4e0f-a0ab-ac5d5ce337fa_tcm990-383423.jpg); */
     background-color: white;
     background-repeat: no-repeat;
@@ -6,126 +6,51 @@ body{
     background-position: center;
 }
 #bg {
-    position: fixed; 
-    top: 0; 
-    left: 0; 
-  
-    /* Preserve aspet ratio */
-    min-width: 100%;
-    min-height: 100%;
-  }
-h2{
+   position: fixed; 
+   top: 0; 
+   left: 0; 
+ 
+   /* Preserve aspet ratio */
+   min-width: 100%;
+   min-height: 100%;
+ }
+
+h1{
    padding-top: 25px;
-   padding-left: 27px ;
+   /* padding-left: 27px ; */
     font-size: 50px;
     font-family: 'Jaldi', sans-serif;
     font-weight: bold;
     /* margin: auto; */
     margin: 2px;
     /* opacity: 1; */
-}
-.container{
-   
-    width: 752px;;
-    height: 446px;;
-    /* border-radius:4px; */
-    /* display:flex;
-    flex-direction:column; */
-    /* justify-content:center; */
-    /* align-items:center; */
-    background-color: white;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    background-color: rgba(255, 255, 255, 0.7);
-    
-}
-.border{
-    width: 751px;
-    height: 445px;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    border: 7px solid white;
-}
-#details{
-    display:flex;
-    flex-direction:column;
-    /* justify-content:center; */
-    align-items:center;
-    padding-top:20px;
-}
-.button-position{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
 }
 #button{
-    background-color:#C96F66;
-    border: 1px white solid;
-    padding: 10px 57.5px;
-    /* ratio is 4:13 */
-    color: white;
-    border-radius: 4px;
-    font-size: 25px;
-    position: relative;
-    left: 139px;
-    right: 0;
-    top: 0;
-    bottom: 0;
+   background-color:#C96F66;
+   border: 1px white solid;
+   padding: 10px 57.5px;
+   /* ratio is 4:13 */
+   color: white;
+   border-radius: 4px;
+   font-size: 25px;
+   /* position: relative;
+   left: 139px;
+   right: 0;
+   top: 0;
+   bottom: 0; */
 }
-#email{
-    border: 5px solid #3D3C38;    
-    font-size: 32px;
-    width: 439px;
-    margin-top: -50px;
-    font-weight: bold;
-    font-family: 'Jaldi', sans-serif;
-    box-shadow: 0px 0px 5px 0px #3D3C38;
+.button-container{
+   display: flex;
+   justify-content: center;
+   align-items: center;
 }
-#password{
-    border: 5px solid #3D3C38;
-    font-size: 32px;
-    width: 439px;
-    font-weight: bold;
-    font-family: 'Jaldi', sans-serif;
-    background-color: white;
-    opacity: 1;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    box-shadow: 0px 0px 5px 0px #3D3C38;
+.terms{
+   display: flex;
+   justify-content: center;
+   align-items: center;
 }
-/* #register */
- a:link{
-    color: black;
-    background-color: transparent;
-    text-decoration: none;
-    font-weight: bold;
-    font-family: 'Jaldi', sans-serif;
-    font-size: 30px;
-    padding-bottom: 10px;
-}
-/* #register  */
-a:visited {
-    color: #71a3a0;
-    background-color: transparent;
-    text-decoration: none;
-    font-weight: bold;
-    font-family: 'Jaldi', sans-serif;
-    font-size: 30px;
-  }
-/* #register  */
-a:hover {
-    color: #fa8130;
-    background-color: transparent;
-    text-decoration: underline;
-    font-weight: bold;
-    font-family: 'Jaldi', sans-serif;
-    font-size: 30px;
+#register{
+   text-align: center;
+   color: #393f81;
 }
