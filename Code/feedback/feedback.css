@@ -1,0 +1,22 @@
+
+
+.btn-lg{
+    background-color:#C96F66;
+    border: 1px white solid;
+    padding: 10px 57.5px;
+}
+.vh-100{
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    
+    /* Preserve aspet ratio */
+    min-width: 100%;
+    min-height: 100%;
+  }
+#rg-button{
+    background-color: #C96F66;
+}
+.btn {
+    background-color: violet;
+}
