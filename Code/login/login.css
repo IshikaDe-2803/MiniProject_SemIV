@@ -55,9 +55,7 @@ h1{
    text-align: center;
    color: #393f81;
 }
-.footer-container{
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 2.5rem; 
+footer{
+   margin-top: 10%;
+   margin-bottom: 0%;
 }
