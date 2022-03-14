@@ -27,7 +27,7 @@ h2{
      background-color: white;
      position: relative;
      top: 0px;
-     bottom: 50px;
+     bottom: 30px;
      left: 0;
      right: 0;
      margin: auto;
@@ -69,7 +69,22 @@ h2{
      position: absolute;
      bottom: 0px;
  }
+ .detection{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+ }
+ .radio-thingy{
+     background-color: red;
+     height: 40px;
+     width: 40px;
+     border-radius: 50%;
+ }
+ #entry{
+    font-family: 'Jaldi', sans-serif;
+    font-size: 30px;
+ }
  footer{
-     margin-top: 10%;
+     margin-top: 5%%;
      margin-bottom: 0%;
  }
