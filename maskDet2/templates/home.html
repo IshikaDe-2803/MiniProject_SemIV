@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <title>Home</title>
+    <style>
+        /*  html,body{
+          height:100%;
+        } */
+        
+        .carousel,
+        .item,
+        .active {
+            height: 100%;
+        }
+        
+        .carousel-inner {
+            height: 100%;
+        }
+        /* .carousal-container{
+          padding-bottom: 50px;
+        } */
+    </style>
+    <script src="https://kit.fontawesome.com/c6912bf07b.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- Navbar -->
+    {% include 'navbar.html' %} {% if feedback == True %}
+    <div class="alert alert-success alert-dismissible fade show" role="alert" style="margin: 1% 2% 1% 2%; text-align: center;">
+        <strong>Feedback recorded successfully!</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    {% endif %}
+    <!-- carousal -->
+    <div class="carousal-container">
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="/static/imgs/homepg_imgs/1.png" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="/static/imgs/homepg_imgs/2.png" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="/static/imgs/homepg_imgs/3.png" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="/static/imgs/homepg_imgs/4.png" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="/static/imgs/homepg_imgs/5.png" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="/static/imgs/homepg_imgs/6.png" class="d-block w-100" alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+        </div>
+    </div>
+    <!-- footer -->
+    {% include 'footer.html' %}
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>

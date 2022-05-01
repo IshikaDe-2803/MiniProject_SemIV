@@ -1,0 +1,48 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* padding-top: 20px; */
+}
+
+.btn-lg {
+    background-color: #C96F66;
+    border: 1px white solid;
+    padding: 10px 57.5px;
+}
+
+.vh-100 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* Preserve aspet ratio */
+    min-width: 100%;
+    min-height: 100%;
+}
+
+#rg-button {
+    background-color: #C96F66;
+}
+
+#button {
+    background-color: #C96F66;
+    border: 1px white solid;
+    padding: 10px 57.5px;
+    /* ratio is 4:13 */
+    color: white;
+    border-radius: 4px;
+    font-size: 25px;
+    /* position: relative;
+   left: 139px;
+   right: 0;
+   top: 0;
+   bottom: 0; */
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,66 @@
+.body {
+    /* background-image: url(https://ysm-res.cloudinary.com/image/upload/c_fill,f_auto,g_faces:auto,h_720,q_auto,w_1280/v1/yale-medicine/live-prod/ym_new/images/3655000d-7adc-4e0f-a0ab-ac5d5ce337fa_tcm990-383423.jpg); */
+    background-color: white;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+#bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* Preserve aspet ratio */
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+}
+
+h1 {
+    padding-top: 25px;
+    /* padding-left: 27px ; */
+    font-size: 40px;
+    font-family: 'Jaldi', sans-serif;
+    font-weight: bold;
+    /* margin: auto; */
+    margin: 2px;
+    /* opacity: 1; */
+    text-align: center;
+}
+
+#button {
+    background-color: #C96F66;
+    border: 1px white solid;
+    padding: 10px 57.5px;
+    /* ratio is 4:13 */
+    color: white;
+    border-radius: 4px;
+    font-size: 25px;
+    /* position: relative;
+   left: 139px;
+   right: 0;
+   top: 0;
+   bottom: 0; */
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.terms {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#register {
+    text-align: center;
+    color: #393f81;
+}
+
+#footer {
+    margin-top: 10%;
+    margin-bottom: 0%;
+}
