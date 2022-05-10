@@ -1,18 +1,18 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from flask_login import UserMixin
 import os
 
 basedir = os.path.dirname(os.path.abspath(__file__))
-# print(basedir)
 
 app = Flask(__name__)
-# 3 forward slash - relative path
-# 4 forward slash - absolute path
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///{}'.format(os.path.join(basedir, 'data.db'))
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
-class Users(db.Model):
+  
+
+class Users(UserMixin, db.Model):
     __tablename__ = 'users'
     email = db.Column(db.String(120), primary_key=True, nullable=False)
     password = db.Column(db.String(120), nullable=False)
@@ -21,6 +21,18 @@ class Users(db.Model):
         self.email = email
         self.password = password
         self.telephone = telephone
+
+    def is_active(self):
+        """True, as all users are active."""
+        return True
+
+    def get_id(self):
+        """Return the email address to satisfy Flask-Login's requirements."""
+        return self.email
+
+    def is_anonymous(self):
+        """False, as anonymous users aren't supported."""
+        return False
 
 class Feedback(db.Model):
     __tablename__ = 'feedback'

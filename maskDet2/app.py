@@ -1,4 +1,5 @@
-from flask import Flask, render_template, Response, request, redirect, url_for, flash, g
+from flask import Flask, render_template, Response, request, redirect, url_for, flash, g, session
+from flask_login import LoginManager, login_required, login_user, logout_user
 import cv2
 from camera import VideoCam
 import time
@@ -17,6 +18,11 @@ app.config['MAIL_PASSWORD'] = 'unknownme~'
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
 mail = Mail(app)
+login_manager = LoginManager(app)
+
+@login_manager.user_loader
+def load_user(user_id):
+    return Users.query.get(user_id)
 
 @app.route('/')
 def home():
@@ -28,10 +34,10 @@ def login():
         email_id = request.form['Loginemail']
         password1 = request.form['Loginpassword']
         check_email = Users.query.filter_by(email=email_id).first()
+        user = Users.query.filter_by(email=email_id).first()
         if check_email is not None and check_email.password == password1:
             success = 'Login SUCCESSFUL'
-        # if email_id == "admin@gmail.com" and password1 == "admin1234*":
-            success = 'Login SUCCESSFUL'
+            login_user(user)
             return redirect(url_for('dialog'))
         else:
             flash("Invalid Login!!!")
@@ -39,9 +45,6 @@ def login():
     else:
         return render_template('login.html', Login_activity='active', registration=False)
 
-# @app.route('/feedback')
-# def feedback():
-#     return render_template('feedback.html', Feedback_activity='active')
 
 @app.route('/feedback', methods=['GET', 'POST'])
 def feedback():
@@ -66,6 +69,10 @@ def register():
         password1 = request.form['register_password']
         password_confirm = request.form['confirm_password']
         telephone_no = request.form['telephone']
+        duplicate_user_check1 = Users.query.filter_by(email=email_id).first()
+        duplicate_user_check2 = Users.query.filter_by(telephone=telephone_no).first()
+        if duplicate_user_check1 or duplicate_user_check2:
+            return render_template('register.html', Register_activity='active', registration=False)
         if password1 == password_confirm:
             new_user = Users(email=email_id, password=password1, telephone=telephone_no)
             db.session.add(new_user)
@@ -77,12 +84,12 @@ def register():
     else:
         return render_template('register.html', Register_activity='active')
         
-
 @app.route('/detect')
 def detect():
     return render_template('detection.html', Detect_activity='active')
 
 @app.route('/dialog', methods=['GET', 'POST'])
+@login_required
 def dialog():
     return render_template('dialog.html')
 
@@ -101,6 +108,11 @@ def gen_frames(camera):
 def video_feed():
     return Response(gen_frames(VideoCam()), mimetype='multipart/x-mixed-replace; boundary=frame')
 
+@app.route("/logout")
+@login_required
+def logout():
+    logout_user()
+    return render_template('home.html', home_activity='active')
 
 if __name__ == '__main__':
     app.run(debug=True, host='127.0.0.1', port=5000)

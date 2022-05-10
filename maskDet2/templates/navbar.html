@@ -23,6 +23,7 @@
 
             </ul>
             <ul class="navbar-nav navbar-right ">
+                {% if not current_user.is_authenticated %}
                 <li class="nav-item">
                     <a class="nav-link {{Login_activity}}" aria-current="page" href="{{url_for('login')}}">Login</a>
                 </li>
@@ -32,6 +33,11 @@
                 <li class="nav-item">
                     <a class="nav-link {{Register_activity}}" aria-current="page" href="{{url_for('register')}}">Register</a>
                 </li>
+                {% endif %} {% if current_user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{{url_for('logout')}}">Logout</a>
+                </li>
+                {% endif %}
             </ul>
 
         </div>
