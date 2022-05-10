@@ -47,3 +47,12 @@ class Feedback(db.Model):
         self.telephone = telephone
         self.message = message
 
+class UserMaskDetails(db.Model):
+    __tablename__ = 'maskDetails'
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    email = db.Column(db.String(120), nullable=False)
+    wearingMask = db.Column(db.Boolean, nullable=False)
+    def __init__(self, email=None, wearingMask=None):
+        self.email = email
+        self.wearingMask = wearingMask
+

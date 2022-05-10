@@ -1,11 +1,11 @@
 from flask import Flask, render_template, Response, request, redirect, url_for, flash, g, session
-from flask_login import LoginManager, login_required, login_user, logout_user
+from flask_login import LoginManager, login_required, login_user, logout_user, current_user
 import cv2
 from camera import VideoCam
 import time
 from datetime import datetime
 from functools import wraps
-from model import Users, Feedback, db
+from model import Users, Feedback, db, UserMaskDetails
 from flask_mail import Mail, Message
 
 app = Flask(__name__, template_folder='templates')
@@ -19,6 +19,7 @@ app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
 mail = Mail(app)
 login_manager = LoginManager(app)
+maskTF = True 
 
 @login_manager.user_loader
 def load_user(user_id):
@@ -26,6 +27,14 @@ def load_user(user_id):
 
 @app.route('/')
 def home():
+
+    return render_template('home.html', home_activity='active')
+
+@app.route('/success')
+def success():
+    new_user_details = UserMaskDetails(email=current_user.email, wearingMask=maskTF)
+    db.session.add(new_user_details)
+    db.session.commit()
     return render_template('home.html', home_activity='active')
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -99,7 +108,6 @@ def gen_frames(camera):
         frame, wearmask = camera.get_frame()
         global curr_datetime
         curr_datetime = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
-        global maskTF 
         maskTF = wearmask
         yield (b'--frame\r\n'
                b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
@@ -112,6 +120,10 @@ def video_feed():
 @login_required
 def logout():
     logout_user()
+    return render_template('home.html', home_activity='active')
+
+@app.login_manager.unauthorized_handler
+def unauthorized():
     return render_template('home.html', home_activity='active')
 
 if __name__ == '__main__':

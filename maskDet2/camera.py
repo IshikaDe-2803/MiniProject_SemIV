@@ -20,9 +20,17 @@ class VideoCam(object):
     def __del__(self):
         self.video_capture.release()
 
+    def rescale_frame(self, frame, percent=75):
+        width = int(frame.shape[1] * percent/ 100)
+        height = int(frame.shape[0] * (percent - 10)/ 100)
+        dim = (width, height)
+        return cv2.resize(frame, dim, interpolation =cv2.INTER_AREA)
+
     def get_frame(self):
+        
         # Capture frame-by-frame
         ret, frame = self.video_capture.read()
+        frame = self.rescale_frame(frame, percent=75)
         #Convert frame to gray scale
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
         #Detect face
