@@ -27,7 +27,6 @@ def load_user(user_id):
 
 @app.route('/')
 def home():
-
     return render_template('home.html', home_activity='active')
 
 @app.route('/success')
@@ -125,7 +124,7 @@ def logout():
 
 @app.login_manager.unauthorized_handler
 def unauthorized():
-    return render_template('home.html', home_activity='active')
+    return render_template('home.html', home_activity='active', detect=False)
 
 if __name__ == '__main__':
     app.run(debug=True, host='127.0.0.1', port=5000)
