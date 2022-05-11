@@ -40,6 +40,13 @@
           <span aria-hidden="true">&times;</span>
         </button>
     </div>
+    {% endif %} {% if detect == False %}
+    <div class="alert alert-danger alert-dismissible fade show" role="alert" style="margin: 1% 2% 1% 2%; text-align: center;">
+        <strong>Please login to access detection page.</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+    </div>
     {% endif %}
     <!-- carousal -->
     <div class="carousal-container">
