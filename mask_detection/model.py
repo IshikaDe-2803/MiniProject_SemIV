@@ -51,8 +51,10 @@ class UserMaskDetails(db.Model):
     __tablename__ = 'maskDetails'
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     email = db.Column(db.String(120), nullable=False)
+    curr_time = db.Column(db.String(120))
     wearingMask = db.Column(db.Boolean, nullable=False)
-    def __init__(self, email=None, wearingMask=None):
+    def __init__(self, email=None, curr_time=None, wearingMask=None):
         self.email = email
+        self.curr_time = curr_time
         self.wearingMask = wearingMask
 
