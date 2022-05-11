@@ -7,6 +7,7 @@ from datetime import datetime
 from functools import wraps
 from model import Users, Feedback, db, UserMaskDetails
 from flask_mail import Mail, Message
+from datetime import date
 
 app = Flask(__name__, template_folder='templates')
 app.secret_key = "super secret key"
@@ -29,9 +30,15 @@ def load_user(user_id):
 def home():
     return render_template('home.html', home_activity='active')
 
+@app.route('/adminpg')
+def adminpg():
+    return render_template('admin.html')
+
 @app.route('/success')
 def success():
-    new_user_details = UserMaskDetails(email=current_user.email, wearingMask=maskTF)
+    global curr_datetime
+    curr_datetime = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+    new_user_details = UserMaskDetails(email=current_user.email, curr_time=curr_datetime, wearingMask=maskTF)
     db.session.add(new_user_details)
     db.session.commit()
     return render_template('home.html', home_activity='active')
@@ -41,6 +48,8 @@ def login():
     if request.method == 'POST':
         email_id = request.form['Loginemail']
         password1 = request.form['Loginpassword']
+        if (email_id == 'admin@gmail.com' and password1 == 'admin12345*'):
+            return render_template('admin.html')
         check_email = Users.query.filter_by(email=email_id).first()
         user = Users.query.filter_by(email=email_id).first()
         if check_email is not None and check_email.password == password1:
@@ -67,8 +76,24 @@ def feedback():
         msg = Message('Mask Detector Feedback', sender = 'dmishika2002@gmail.com', recipients = ['dmishika2002@gmail.com'])
         msg.body = "Feedback for Mask Detector\nName: " + name + "\n" + "Email: " + email + "\n" + "Contact: " + number + "\n" + "Feedback: " + feedbackMsg
         mail.send(msg)
-        return render_template('home.html', feedback=True)    
+        return render_template('home.html', home_activity='active', feedback=True)    
     return render_template('feedback.html', Feedback_activity='active')
+
+@app.route('/admin')
+def admin():
+    allMaskDetails = UserMaskDetails.query.all()
+    f = open("mask_details.txt", "w")
+    for details in allMaskDetails:
+        f.write(str(details.id) + ". " + str(details.email) + "   " + str(details.curr_time)  +  "  " + str(details.wearingMask) + "\n")
+    f.close()
+    msg = Message('Mask Details', sender = 'dmishika2002@gmail.com', recipients = ['dmishika2002@gmail.com'])
+    msg.body = "PFA mask details of all members."
+    with app.open_resource("./mask_details.txt") as fp:  
+        msg.attach("mask_details.txt","application/txt",fp.read())  
+        mail.send(msg)  
+    mail.send(msg)
+    return render_template('admin.html', mail=True) 
+
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
